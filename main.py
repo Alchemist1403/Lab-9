@@ -17,10 +17,8 @@ class Portfolio(db.Model):
         return {"id":self.id, "title":self.title, "link": self.link,}
 
 
-# Создание базы данных
-with app.app_context():
-    db.create_all()
-
+# Вариант кода со сложным синтаксисом Java script (на основе материалов лекции)
+# Допзадание не реализовано 
 
 # Фронтенд
 @app.route('/')
@@ -54,5 +52,36 @@ def delete_project(project_id):
     return  jsonify({"message": "Запись о проекте удалена"})
 
 
+# Вариант кода с простым синтаксисом Java script (на основе кода в первоначальном main.py)
+# Допзадание реализовано 
+
+# Фронтенд + отображение всего списка
+# @app.route('/')
+# def index():
+#     project = Portfolio.query.all()
+#     return render_template('index.html', project_list=project)
+
+
+# # Добавление проекта
+# @app.route('/add', methods=['POST'])
+# def add_project():
+#     data = request.get_json()
+#     title = data['title']
+#     link = data['link']
+#     project = Portfolio(title=title, link=link)
+#     db.session.add(project)
+#     db.session.commit()
+
+
+# # Удаление всего списка
+# @app.route("/clear", methods=["POST"])
+# def clear_all():
+#     db.session.query(Portfolio).delete()
+#     db.session.commit()
+
+
 if __name__ == '__main__':
+    # Создание базы данных
+    with app.app_context():
+        db.create_all()
     app.run(debug=True)

@@ -3,25 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="/static/update.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
     <title>Developer`s portfolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Портфолио разработчика</h1>
     <h2>Добавляйте сюда свои новые проекты!</h2>
+
     <form id="projectForm">
         <div>
             <input type="text" name="title" id="title" placeholder="Название" style="width: 300px;">
         </div>
         <div>
-            <input type="https://github.com/" name="link" id="link" placeholder="Ссылка на репозиторий в Github" style="width: 300px;">
+            <input type="text" name="link" id="link" placeholder="Ссылка на репозиторий в Github" style="width: 300px;">
         </div>
-    <button type="submit">✅</button>
-    <h3>Список проектов:</h3>
+        <button type="submit">✅</button>
+         <h3>Список проектов:</h3> 
     </form>
-
     <ul id="projectList"></ul>
 
-    <script src="{{ url_for('static', filename='update.js') }}"></script>
+    <!-- form>
+        <div>
+            <input type="text" name="title" id="title" placeholder="Название" style="width: 300px;">
+        </div>
+        <div>
+            <input type="text" name="link" id="link" placeholder="Ссылка на репозиторий в Github" style="width: 300px;">
+        </div>
+        <div>
+            <button onClick="addProject()" class="button">✅</button>
+            <button onClick="clearAll()" class="button">Clear</button>
+        </div>
+        <h3>Список проектов:</h3> 
+    </form>
+    <ul id="output_clear">
+        {% for project in project_list %}
+        <li>
+            <div>
+                {{ project['title'] }}
+                <a href="{{  project['link'] }}">{{ project['link'] }} </a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul> -->
+
 </body>
 </html>
