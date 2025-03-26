@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 projectList.innerHTML = "";
                 portfolio.forEach(project => {
                     const li = document.createElement("li");
-                    li.innerHTML =`<div>${project.title}. Ссылка: <a href="link">${project.link}</a></div>
+                    li.innerHTML =`<div>${project.title}. Ссылка: <a href="${project.link}">${project.link}</a></div>
                         <button onclick="deleteProject(${project.id})">Удалить</button>`;
                     projectList.appendChild(li);
                 });

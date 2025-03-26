@@ -55,7 +55,7 @@ def delete_project(project_id):
 # Вариант кода с простым синтаксисом Java script (на основе кода в первоначальном main.py)
 # Допзадание реализовано 
 
-# Фронтенд + отображение всего списка
+# # Фронтенд + отображение всего списка
 # @app.route('/')
 # def index():
 #     project = Portfolio.query.all()
